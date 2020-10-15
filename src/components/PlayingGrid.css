@@ -1,0 +1,28 @@
+#playing-grid {
+  font-size: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px;
+  grid-gap: 10px 10px;
+  justify-self: center;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+#reset-button {
+  margin-top: 40px;
+  background-color: cadetblue;
+  color: #eadcc5;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding: 5px 12px;
+  border-radius: 15px;
+}
+
+#reset-button:hover {
+  background-color: grey;
+}

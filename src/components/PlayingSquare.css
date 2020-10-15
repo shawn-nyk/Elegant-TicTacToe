@@ -1,0 +1,11 @@
+.none {
+  background-color: grey;
+}
+
+.player {
+  background-color: cadetblue;
+}
+
+.opponent {
+  background-color: salmon;
+}
