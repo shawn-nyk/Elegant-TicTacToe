@@ -22,9 +22,9 @@
 
 #new-game-button {
   margin-top: 35px;
-  background-color: #2c72b7;
+  background-color: #78968d;
   color: #f7eddf;
-  font-family: basic-sans, sans-serif;
+  font-family: bodoni-urw, serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -34,7 +34,7 @@
 }
 
 #new-game-button:hover {
-  background-color: #2968a6;
+  background-color: #4f6b63;
 }
 
 @media only screen and (max-width: 500px) {
