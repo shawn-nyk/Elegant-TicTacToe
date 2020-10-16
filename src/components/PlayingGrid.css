@@ -22,7 +22,7 @@
 
 #new-game-button {
   margin-top: 35px;
-  background-color: #78968d;
+  background-color: #4f6b63;
   color: #f7eddf;
   font-family: bodoni-urw, serif;
   font-weight: 400;
@@ -34,13 +34,13 @@
 }
 
 #new-game-button:hover {
-  background-color: #4f6b63;
+  background-color: #374f48;
 }
 
 @media only screen and (max-width: 500px) {
   /* For mobile: */
   #game-over-title {
-    padding-top: 85px;
+    padding-top: 67px;
     font-size: 25px;
   }
 

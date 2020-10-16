@@ -40,9 +40,13 @@ body {
   /* For mobile: */
   #title-solid {
     font-size: 35px;
+    margin-top: 24px;
+    margin-bottom: 34px;
   }
 
   #title-deco {
     font-size: 35px;
+    margin-top: 24px;
+    margin-bottom: 34px;
   }
 }
