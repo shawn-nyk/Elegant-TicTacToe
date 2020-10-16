@@ -16,19 +16,19 @@ class PlayingGrid extends React.Component {
     let newGameState = [...this.state.gameState];
     let gameOver = this.state.gameOver;
     let winner = this.state.winner;
-    if (gameOver || newGameState[r][c] != "none") {
+    if (gameOver || newGameState[r][c] !== "none") {
       return;
     }
     newGameState[r][c] = "player";
     winner = this.checkWinner(newGameState);
-    if (winner != "none" || this.checkBoardFilled(newGameState)) {
+    if (winner !== "none" || this.checkBoardFilled(newGameState)) {
       gameOver = true;
     }
     if (!gameOver) {
       newGameState = this.opponentMoves(newGameState);
     }
     winner = this.checkWinner(newGameState);
-    if (winner != "none" || this.checkBoardFilled(newGameState)) {
+    if (winner !== "none" || this.checkBoardFilled(newGameState)) {
       gameOver = true;
     }
     this.setState({gameState: newGameState, gameOver: gameOver, winner: winner});
@@ -37,19 +37,19 @@ class PlayingGrid extends React.Component {
   checkWinner(gameState) {
     let winner = "none";
     for (let i = 0; i < 3; i++) {
-      if ((gameState[0][i] != "none") && (gameState[0][i] == gameState[1][i]) && (gameState[1][i] == gameState[2][i])) {
+      if ((gameState[0][i] !== "none") && (gameState[0][i] === gameState[1][i]) && (gameState[1][i] === gameState[2][i])) {
         winner = gameState[0][i];
         break;
       }
-      if ((gameState[i][0] != "none") && (gameState[i][0] == gameState[i][1]) && (gameState[i][1] == gameState[i][2])) {
+      if ((gameState[i][0] !== "none") && (gameState[i][0] === gameState[i][1]) && (gameState[i][1] === gameState[i][2])) {
         winner = gameState[i][0];
         break;
       }
     }
-    if ((gameState[0][0] != "none") && (gameState[0][0] == gameState[1][1]) && (gameState[1][1] == gameState[2][2])) {
+    if ((gameState[0][0] !== "none") && (gameState[0][0] === gameState[1][1]) && (gameState[1][1] === gameState[2][2])) {
       winner = gameState[0][0];
     }
-    if ((gameState[0][2] != "none") && (gameState[0][2] == gameState[1][1]) && (gameState[1][1] == gameState[2][0])) {
+    if ((gameState[0][2] !== "none") && (gameState[0][2] === gameState[1][1]) && (gameState[1][1] === gameState[2][0])) {
       winner = gameState[0][2];
     }
     return winner;
@@ -59,7 +59,7 @@ class PlayingGrid extends React.Component {
     let boardFilled = true;
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
-        if (gameState[i][j] == "none") {
+        if (gameState[i][j] === "none") {
           boardFilled = false;
           break;
         }
@@ -77,7 +77,7 @@ class PlayingGrid extends React.Component {
     do {
       randomRow = Math.round(Math.random() * 2);
       randomCol = Math.round(Math.random() * 2);
-    } while (newGameState[randomRow][randomCol] != "none");
+    } while (newGameState[randomRow][randomCol] !== "none");
     newGameState[randomRow][randomCol] = "opponent";
     return newGameState;
   }
@@ -89,7 +89,7 @@ class PlayingGrid extends React.Component {
 
   render() {
     const visibility = this.state.gameOver ? "visible" : "hidden";
-    const gameOverMessage = this.state.winner != "player" ? "Better luck next time!" : "Congratulations! You won!"; 
+    const gameOverMessage = this.state.winner !== "player" ? "Better luck next time!" : "Congratulations! You won!"; 
     return (
       <>
         <h1 style={{visibility: visibility}} id="game-over-title">{gameOverMessage}</h1>
