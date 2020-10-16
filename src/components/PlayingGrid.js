@@ -73,6 +73,12 @@ class PlayingGrid extends React.Component {
 
   opponentMoves(newGameState) {
     let tryGameState = newGameState;
+
+    if (tryGameState[1][1] === "none") {
+      tryGameState[1][1] = "opponent";
+      return tryGameState;
+    }
+
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         if (tryGameState[i][j] === "none") {
