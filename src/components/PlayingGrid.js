@@ -104,7 +104,7 @@ class PlayingGrid extends React.Component {
           <PlayingSquare id="square-8" owner={this.state.gameState[2][1]} onClickHandler={() => this.onClickHandler(2, 1)}/>
           <PlayingSquare id="square-9" owner={this.state.gameState[2][2]} onClickHandler={() => this.onClickHandler(2, 2)}/>
         </div>
-        <button id="reset-button" onClick={() => this.newGame()}>New Game</button>
+        <button id="new-game-button" onClick={() => this.newGame()}>New Game</button>
       </>
     );
   }
