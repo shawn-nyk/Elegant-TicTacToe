@@ -4,5 +4,34 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: #123b77;
+}
+
+#title {
+  background-color: #f7eddf;
+  display: grid;
+}
+
+#title-solid {
+  grid-column: 1;
+  grid-row: 1;
+  color: #eac092;
+  font-family: rosella-solid, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+#title-deco {
+  grid-column: 1;
+  grid-row: 1;
+  color: #9f7b4b;
+  font-family: rosella-deco, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
