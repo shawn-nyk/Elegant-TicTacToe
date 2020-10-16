@@ -72,6 +72,32 @@ class PlayingGrid extends React.Component {
   }
 
   opponentMoves(newGameState) {
+    let tryGameState = newGameState;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (tryGameState[i][j] === "none") {
+          tryGameState[i][j] = "opponent";
+          if (this.checkWinner(tryGameState) === "opponent") {
+            return tryGameState;
+          }
+          tryGameState[i][j] = "none";
+        }
+      }
+    }
+
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (tryGameState[i][j] === "none") {
+          tryGameState[i][j] = "player";
+          if (this.checkWinner(tryGameState) === "player") {
+            tryGameState[i][j] = "opponent";
+            return tryGameState
+          }
+          tryGameState[i][j] = "none";
+        }
+      }
+    }
+
     let randomRow = 0;
     let randomCol = 0;
     do {
